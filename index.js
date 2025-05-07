@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
 const fs = require('fs').promises;
 const path = require('path');
 const os = require('os');
@@ -73,7 +72,7 @@ async function addToPath(folderPath) {
       }
       
       // Add the export line
-      const marker = '# Added by add_to_path.js';
+      const marker = '# Added by add-to-path';
       const newContent = content.includes(marker)
         ? content.replace(marker, `${marker}\n${exportLine}`)
         : `${content}\n\n${marker}\n${exportLine}`;
@@ -97,7 +96,7 @@ async function addToPath(folderPath) {
   
   if (!folderPath) {
     console.error('Please provide a folder path as an argument');
-    console.error('Usage: node add_to_path.js <folder_path>');
+    console.error('Usage: npx radekstepan/add-to-path <folder_path>');
     process.exit(1);
   }
   
